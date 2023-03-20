@@ -105,7 +105,7 @@ local Char = Plr.Character or Plr.CharacterAdded:Wait()
 local Hum = Char:WaitForChild("Humanoid")
 
 local stamina, staminaMax = 100, 100
-local sprintTime = 7
+local sprintTime = 10
 local cooldown = false
 
 local ModuleScripts = {
@@ -121,7 +121,7 @@ local nIdx; nIdx = hookmetamethod(game, "__newindex", newcclosure(function(t, k,
 		elseif ModuleScripts.MainGame.crouching then
 			v = 8
 		else
-			v = isSprinting and 30 or 15
+			v = isSprinting and 20 or 15
 		end
 	end
 
@@ -158,7 +158,7 @@ UIS.InputBegan:Connect(function(key, gameProcessed)
 			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"You're exhausted.")
 			local noStamernaSound = Instance.new("Sound",workspace)
 			noStamernaSound.SoundId = "rbxassetid://8258601891"
-			noStamernaSound.Volume = 0.8
+			noStamernaSound.Volume = 0
 			noStamernaSound.PlayOnRemove = true
 			noStamernaSound:Destroy()
 			cooldown = true
