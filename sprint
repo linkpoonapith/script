@@ -1,5 +1,4 @@
 
-
 local Parent = game.Players.LocalPlayer.PlayerGui
 
 local Sprint = Instance.new("Frame")
@@ -104,7 +103,7 @@ local Plr = Players.LocalPlayer
 local Char = Plr.Character or Plr.CharacterAdded:Wait()
 local Hum = Char:WaitForChild("Humanoid")
 
-local stamina, staminaMax = 100, 100
+local stamina, staminaMax = 110, 110
 local sprintTime = 10
 local cooldown = false
 
@@ -151,11 +150,11 @@ UIS.InputBegan:Connect(function(key, gameProcessed)
 		isSprinting = false
 		Hum:SetAttribute("SpeedBoost",0)
 		game.TweenService:Create(ImageLabel,TweenInfo.new(1),{ImageTransparency = 1}):Play()
-		Hum.WalkSpeed = 12
+		Hum.WalkSpeed = 15
 
 		if stamina == 0 then
 			-- Cooldown
-			firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent,"You're exhausted.")
+			firesignal(game.ReplicatedStorage.EntityInfo.Caption.OnClientEvent,"You're exhausted.")
 			local noStamernaSound = Instance.new("Sound",workspace)
 			noStamernaSound.SoundId = "rbxassetid://8258601891"
 			noStamernaSound.Volume = 0
@@ -191,4 +190,4 @@ UIS.InputBegan:Connect(function(key, gameProcessed)
 	end
 end)
 Hum:SetAttribute("SpeedBoost",0)
-Hum.WalkSpeed = 12
+Hum.WalkSpeed = 15
